@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <title>Galactic Summit Registration</title>
+</head>
+<body>
+<form action="/register" method="post">
+    <label>
+        Representative Name
+        <input id="rep-name" maxlength="20" minlength="1" name="rep_name" type="text">
+    </label>
+    <br>
+    <label>
+        Galactic Communications
+        <input id="gal-comm" maxlength="100" name="gal_comm" type="email">
+    </label>
+    <br>
+    <label>
+        Crew Size Attending
+        <input id="crew-size" max="8" min="1" name="crew_size" type="number">
+    </label>
+    <br>
+    <br>
+    <fieldset>
+        <legend>Alliance:</legend>
+        <br>
+        <label>
+            Star Wars
+            <input id="star-wars" name="alliance" type="radio" value="starwars">
+        </label>
+        <label>
+            Star Trek
+            <input id="star-trek" name="alliance" type="radio" value="startrek">
+        </label>
+        <label>
+            Snacks
+            <input id="snacks" name="alliance" type="radio" value="snacks">
+        </label>
+    </fieldset>
+    <br>
+    <br>
+    <label>
+        Summit Updates
+        <input checked id="updates" name="updates" type="checkbox">
+    </label>
+    <br>
+    <br>
+    <button type="reset">Reset</button>
+    <button type="submit">Submit</button>
+</form>
+</body>
+</html>

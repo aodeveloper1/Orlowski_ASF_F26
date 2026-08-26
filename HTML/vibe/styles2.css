@@ -1,0 +1,270 @@
+/* --- Color Palette & Variable Setup --- */
+:root {
+    --copper: #b87333;
+    --brass: #cd7f32;
+    --dark-iron: #2b2b2a;
+    --coal: #1a1a1a;
+    --parchment: #f4ebd9;
+    --cream: #fffcf2;
+}
+
+/* --- Global Reset & Typography --- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Georgia', serif;
+    background-color: var(--parchment);
+    color: var(--dark-iron);
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 40px 0;
+}
+
+/* --- Navigation Bar --- */
+.navbar {
+    background-color: var(--coal);
+    border-bottom: 4px solid var(--copper);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 10px 0;
+}
+
+.logo-img {
+    height: 50px;
+    width: auto;
+    border: 2px solid var(--brass);
+    border-radius: 50%;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li {
+    margin-left: 20px;
+}
+
+.nav-links a {
+    color: var(--parchment);
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 8px 16px;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: var(--brass);
+    border-bottom: 2px solid var(--brass);
+}
+
+/* --- Hero Section --- */
+.hero-section {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://unsplash.com');
+    background-size: cover;
+    background-position: center;
+    color: var(--cream);
+    text-align: center;
+    padding: 120px 20px;
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--brass);
+}
+
+.hero-content p {
+    font-size: 1.4rem;
+    margin-bottom: 40px;
+    font-style: italic;
+}
+
+/* --- UI Buttons --- */
+.btn {
+    display: inline-block;
+    background-color: var(--copper);
+    color: var(--coal);
+    padding: 12px 30px;
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border: 2px solid var(--coal);
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.btn:hover {
+    background-color: var(--brass);
+    color: var(--cream);
+}
+
+/* --- Cards / Features Layout --- */
+.features {
+    display: flex;
+    gap: 30px;
+    justify-content: space-between;
+}
+
+.card {
+    background-color: var(--cream);
+    border: 2px solid var(--copper);
+    padding: 20px;
+    flex: 1;
+    box-shadow: 4px 4px 0px var(--dark-iron);
+}
+
+.card-img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border: 1px solid var(--dark-iron);
+    margin-bottom: 15px;
+}
+
+.card h3 {
+    margin-bottom: 10px;
+    color: var(--copper);
+}
+
+/* --- Inner Page Layout Defaults --- */
+.page-content {
+    text-align: center;
+    flex: 1;
+}
+
+.section-subtitle {
+    font-style: italic;
+    margin-bottom: 40px;
+    color: #555;
+}
+
+/* --- Interactive Menu Table --- */
+.table-container {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: var(--cream);
+    border: 3px double var(--copper);
+    padding: 10px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: var(--coal);
+    color: var(--brass);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+tr:hover {
+    background-color: #f0e6cf;
+}
+
+/* --- Reservation Split Layout & Form --- */
+.reservation-layout {
+    display: flex;
+    gap: 40px;
+    text-align: left;
+    background-color: var(--cream);
+    padding: 30px;
+    border: 2px solid var(--copper);
+}
+
+.form-section {
+    flex: 1;
+}
+
+.side-image-section {
+    flex: 1;
+}
+
+.side-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border: 2px solid var(--coal);
+}
+
+.booking-form {
+    margin-top: 20px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--copper);
+    background-color: var(--parchment);
+    font-family: inherit;
+    color: var(--dark-iron);
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    outline: 2px solid var(--brass);
+}
+
+.btn-submit {
+    width: 100%;
+}
+
+/* --- Sticky Footer Utility --- */
+footer {
+    background-color: var(--coal);
+    color: var(--parchment);
+    text-align: center;
+    padding: 20px;
+    font-size: 0.9rem;
+    border-top: 4px solid var(--copper);
+    margin-top: auto;
+}
