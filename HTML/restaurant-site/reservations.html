@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservations</title>
+    <link href="styles.css" rel="stylesheet">
+</head>
+<body>
+<nav class="navbar">
+    <div class="nav-container">
+        <a class="nav-logo" href="index.html">
+            <img alt="Major McClellan's Migrating Mechanical Mess Logo. Airship with 5M designator"
+                 class="img-logo" height="100"
+                 src="./images/MMMMM%20logo.png" width="100">
+        </a>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a class="active" href="reservations.html">Reservations</a></li>
+        </ul>
+    </div>
+</nav>
+
+<main class="reservation-main">
+    <div class="reservation-layout">
+        <section class="form-section card" id="form">
+            <h2>Schedule Today</h2>
+            <p class="section-subtitle">Has your unit outpaced its organic logistics capabilities? Reserve your unit's
+                delivery today. Reservations are requests only--subject to
+                campaign plan requirements and General approval.</p>
+
+            <form action="/api/reservation" class="reservation-form" method="POST">
+
+                <div class="form-group">
+                    <label for="unit-name">Unit Name</label>
+                    <input id="unit-name" maxlength="20" name="unit-name" placeholder="Unit Name" required type="text">
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input id="email" name="email" required type="email">
+                </div>
+
+                <!--                <div class="form-group">-->
+                <!--                    <label for="unit-size">Unit Size (x1000)</label>-->
+                <!--                        <input type="number" id="unit-size" name="unit-size" min="1" max="8">-->
+                <!--                </div>-->
+
+                <div class="form-group">
+                    <label for="unit-size">Unit Size (x1000)</label>
+                    <select id="unit-size" name="unit-size" required>
+                        <option value="">-- Choose a number --</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="date">Date</label>
+                    <input id="date" name="date" required type="date">
+                </div>
+
+                <div class="form-group">
+                    <label for="time">Time</label>
+                    <input id="time" name="time" required type="time">
+                </div>
+
+                <div class="form-group-radio">
+                    <fieldset>
+                        <legend>Seating Preference:</legend>
+                        <label for="air-drop-only">Air Drop Only</label>
+                        <input id="air-drop-only" name="seating-preference" type="radio" value="air-drop-only">
+                        <label for="cold-rations-only">Cold Rations Only</label>
+                        <input id="cold-rations-only" name="seating-preference" type="radio" value="cold-rations-only">
+                        <label for="full-service">Full Service</label>
+                        <input checked id="full-service" name="seating-preference" type="radio" value="full-service">
+                    </fieldset>
+                </div>
+
+                <div class="form-group">
+                    <label for="dietary-notes">Dietary Notes</label>
+                    <textarea cols="50" id="dietary-notes" maxlength="30" name="dietary-notes" placeholder="Special instructions..."
+                              rows="4"></textarea>
+                </div>
+
+                <div class="form-group-newsletter">
+                    <label for="newsletter">Newsletter</label>
+                    <input checked id="newsletter" name="newsletter" type="checkbox">
+                </div>
+
+                <div class="form-buttons">
+                    <button class="btn btn-submit" type="submit">Transmit Reservation Wire</button>
+                    <button class="btn btn-reset" type="reset">Clear</button>
+                </div>
+            </form>
+        </section>
+
+        <section class="side-image-section card">
+            <img alt="MMMMM airship delivering rations to soldiers" class="side-img" height="100" width="100"
+                 src="./images/MMMMM%20concept.png" >
+        </section>
+    </div>
+</main>
+</body>
+</html>

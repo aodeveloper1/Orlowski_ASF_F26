@@ -1,0 +1,357 @@
+/*   Color scheme to fit union army and steam punk vibes
+| Role               | Color           |       Hex |  Use                          |
+| ------------------ | --------------- | --------: | ----------------------------- |
+| **Boiler Navy**    | Deep blue-black | `#111A1C` | Main page background, header  |
+| **Union Navy**     | Muted navy      | `#1D2C32` | Cards, panels, navigation     |
+| **Gunmetal**       | Warm charcoal   | `#30302B` | Secondary surfaces            |
+| **Antique Brass**  | Dark brass      | `#8A642A` | Borders, icons, dividers      |
+| **Polished Brass** | Golden brass    | `#C49445` | Primary accent, buttons       |
+| **Burnished Gold** | Light brass     | `#D8B36A` | Hover states, highlights      |
+| **Parchment**      | Warm cream      | `#E5D0A3` | Primary text / light sections |
+| **Old Paper**      | Pale parchment  | `#F1E4C5` | Reading backgrounds           |
+| **Leather Brown**  | Deep brown      | `#5A3922` | Secondary accent              |
+| **Boiler Copper**  | Copper          | `#A45E32` | Mechanical/steam accents      |
+| **Ember**          | Burnt orange    | `#B6542D` | Alerts, fire, CTA accents     |
+| **Army Olive**     | Muted olive     | `#68603B` | Military/supply details       |
+ */
+
+:root {
+    /* Primary surfaces */
+    --boiler-navy: #111A1C;
+    --union-navy: #1D2C32;
+    --gunmetal: #30302B;
+
+    /* Brass */
+    --antique-brass: #8A642A;
+    --polished-brass: #C49445;
+    --burnished-gold: #D8B36A;
+
+    /* Paper */
+    --parchment: #E5D0A3;
+    --old-paper: #F1E4C5;
+
+    /* Warm accents */
+    --leather: #5A3922;
+    --copper: #A45E32;
+    --ember: #B6542D;
+
+    /* Military accent */
+    --army-olive: #68603B;
+}
+
+body {
+    background-color: var(--boiler-navy);
+    color: var(--old-paper);
+    margin: 0;
+}
+
+.navbar {
+    background-color: var(--union-navy);
+    border-bottom: 4px solid var(--antique-brass);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 10px 0;
+}
+
+.nav-links {
+    display: flex;
+    font-family: Copperplate, serif;
+    list-style: none;
+    flex-wrap: wrap;
+}
+
+.nav-links li {
+    margin-left: 20px;
+    margin-bottom: 10px;
+}
+
+.nav-links a {
+    font-size: x-large;
+    color: var(--polished-brass);
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 8px 16px;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: var(--ember);
+    border-bottom: 2px solid var(--ember);
+}
+
+
+.hero-section {
+    text-align: center;
+    padding: 1em;
+
+}
+
+.hero-section h1 {
+    color: var(--old-paper);
+    font-size: xxx-large;
+    font-family: Balthazar, serif;
+    text-shadow: #5A3922 2px 2px;
+}
+
+.hero-section p {
+    color: var(--parchment);
+    font-family: Georgia, serif;
+    padding: 0 0 1em 0;
+}
+
+.hero-section b {
+    color: var(--copper);
+    text-shadow: var(--leather) 1px 1px;
+}
+
+.hero-content a {
+    color: var(--boiler-navy);
+    font-family: Copperplate, serif;
+    font-size: x-large;
+    padding: 2px 2px;
+    background-color: var(--polished-brass);
+    border: 2px solid var(--antique-brass);
+}
+
+.menu-callout-images {
+    text-align: center;
+}
+
+.menu-callout-images a {
+    color: var(--boiler-navy);
+    font-family: Copperplate, serif;
+    font-size: x-large;
+    padding: 2px 2px;
+    background-color: var(--polished-brass);
+    border: 2px solid var(--antique-brass);
+}
+
+.menu-main {
+    display: flex;
+    flex-direction: column;
+}
+
+.menu-paragraph {
+    max-width: 600px;
+    margin: 30px auto;
+    padding: 0.5em;
+    border: 2px solid var(--polished-brass);
+
+}
+
+.menu-section {
+    overflow-x: auto;
+}
+
+.menu-table {
+    margin: auto;
+    background-color: var(--parchment);
+    color: var(--boiler-navy);
+    font-family: Georgia, serif;
+    border: 2px solid var(--antique-brass);
+    border-collapse: collapse;
+}
+.menu-table th,
+.menu-table td {
+    border: 1px solid var(--antique-brass);
+    padding: 0.75rem 1rem;
+    text-align: left;
+}
+
+.menu-table th{
+    text-align: center;
+}
+
+.menu-caption {
+    color: var(--old-paper);
+    font-family: Copperplate, serif;
+    font-size: xx-large;
+}
+
+.menu-caption-tag {
+    color: var(--parchment);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    font-size: medium;
+    align-items: baseline;
+}
+
+.menu-caption p {
+
+    font-family: Georgia, serif;
+    font-size: medium;
+    padding: 2px;
+}
+
+.menu-thead {
+    background-color: var(--boiler-navy);
+    color: var(--copper);
+    font-size: x-large;
+    font-family: Copperplate, serif;
+    text-align: center;
+}
+
+.menu-td-day {
+    background-color: var(--gunmetal);
+    color: var(--old-paper);
+    font-size: large;
+    font-family: Copperplate, serif;
+}
+
+.menu-table tr:nth-child(even) {
+    background-color: var(--old-paper);
+}
+
+.menu-callout-images {
+    margin: auto;
+}
+
+.menu-td-ration em {
+    display: block;
+    font-size: small;
+}
+
+.menu-table td {
+    padding: 2px 1em 2px 1em;
+}
+
+.img-menu-callout {
+    margin: 1em;
+    border: 2px solid var(--antique-brass);
+}
+
+
+.reservation-layout {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 1em;
+    font-family: Georgia, serif;
+}
+
+@media (max-width: 600px) {
+    .reservation-layout {
+        flex-direction: column;
+    }
+}
+
+.reservation-layout h2 {
+    font-family: Copperplate, serif;
+}
+
+.card {
+    background-color: var(--parchment);
+    color: var(--union-navy);
+    border: 2px double var(--copper);
+    margin: 10px 20px;
+    padding: 1px;
+}
+
+.side-image-section {
+    display: flex;
+    align-content: center;
+    border: 2px solid var(--copper)
+}
+
+.side-img{
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+#form {
+    max-width: 600px;
+    padding: 1em;
+}
+
+.form-section input, textarea {
+    font-family: Georgia, serif;
+}
+
+.form-group label {
+    font-family: Copperplate, serif;
+    color: var(--union-navy);
+    display: block;
+}
+
+.form-group-newsletter {
+    font-family: Copperplate, serif;
+    color: var(--union-navy);
+    display: block;
+    margin: 0 0 1em 0;
+}
+
+.form-group input {
+    margin: 2px 0 10px 0;
+}
+
+.form-group-radio {
+    display: inline-block;
+    color: var(--union-navy);
+    margin: 2px 0 10px 0;
+    font-family: Copperplate, serif;
+}
+
+.form-group-radio label {
+    font-family: Georgia, serif;
+}
+
+.form-group select {
+    margin: 2px 0 10px 0;
+}
+
+
+.form-buttons button {
+    display: inline-block;
+    font-family: Copperplate, serif;
+    font-size: large;
+    color: var(--union-navy);
+    padding: 2px 2px;
+    margin: 2px;
+    background-color: var(--polished-brass);
+    border: 2px solid var(--antique-brass);
+}
+
+.form-group input {
+    width: 300px;
+    height: 25px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 300px;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.balthazar-regular {
+    font-family: "Balthazar", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+/*Font awesome is used on the menu page for the icons on either side of the menu caption flavor text */
