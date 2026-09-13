@@ -54,30 +54,14 @@ body {
 
 }
 
-.nav-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 10px 0;
-}
 
-.nav-links {
-    display: flex;
+.navbar-nav {
     font-family: Copperplate, serif;
-    list-style: none;
-    flex-wrap: wrap;
 }
 
-.nav-links li {
-    margin-left: 20px;
-    margin-bottom: 10px;
-}
 
-.nav-links a {
-    font-size: x-large;
+.navbar .nav-link {
+    font-size: large;
     color: var(--polished-brass);
     text-decoration: none;
     font-weight: bold;
@@ -87,8 +71,8 @@ body {
     transition: color 0.3s ease;
 }
 
-.nav-links a:hover,
-.nav-links a.active {
+.navbar .nav-link:hover,
+.navbar .nav-link.active {
     color: var(--ember);
     border-bottom: 2px solid var(--ember);
 }
@@ -140,9 +124,15 @@ body {
     border: 2px solid var(--antique-brass);
 }
 
-.menu-main {
-    display: flex;
-    flex-direction: column;
+
+.menu-section h1 {
+    font-family: Copperplate, serif;
+    font-size: xxx-large;
+}
+
+.menu-section h2 {
+    font-family: Copperplate, serif;
+    font-family: xx-large;
 }
 
 .menu-paragraph {
@@ -165,6 +155,7 @@ body {
     border: 2px solid var(--antique-brass);
     border-collapse: collapse;
 }
+
 .menu-table th,
 .menu-table td {
     border: 1px solid var(--antique-brass);
@@ -172,14 +163,8 @@ body {
     text-align: left;
 }
 
-.menu-table th{
+.menu-table th {
     text-align: center;
-}
-
-.menu-caption {
-    color: var(--old-paper);
-    font-family: Copperplate, serif;
-    font-size: xx-large;
 }
 
 .menu-caption-tag {
@@ -191,8 +176,7 @@ body {
     align-items: baseline;
 }
 
-.menu-caption p {
-
+.menu-table p {
     font-family: Georgia, serif;
     font-size: medium;
     padding: 2px;
@@ -231,27 +215,16 @@ body {
 }
 
 .img-menu-callout {
-    margin: 1em;
+    margin: 1em 0;
     border: 2px solid var(--antique-brass);
 }
 
 
 .reservation-layout {
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    justify-content: center;
-    padding: 1em;
     font-family: Georgia, serif;
 }
 
-@media (max-width: 600px) {
-    .reservation-layout {
-        flex-direction: column;
-    }
-}
-
-.reservation-layout h2 {
+.reservation-layout h1 {
     font-family: Copperplate, serif;
 }
 
@@ -259,7 +232,7 @@ body {
     background-color: var(--parchment);
     color: var(--union-navy);
     border: 2px double var(--copper);
-    margin: 10px 20px;
+    margin: 0;
     padding: 1px;
 }
 
@@ -269,7 +242,7 @@ body {
     border: 2px solid var(--copper)
 }
 
-.side-img{
+.side-img {
     display: block;
     width: 100%;
     height: auto;
@@ -277,7 +250,6 @@ body {
 }
 
 #form {
-    max-width: 600px;
     padding: 1em;
 }
 
@@ -307,6 +279,11 @@ body {
     color: var(--union-navy);
     margin: 2px 0 10px 0;
     font-family: Copperplate, serif;
+}
+
+.form-group-radio legend {
+    font-family: Copperplate, serif;
+    font-size: large;
 }
 
 .form-group-radio label {
@@ -352,6 +329,39 @@ img {
     font-family: "Balthazar", serif;
     font-weight: 400;
     font-style: normal;
+}
+
+
+.navbar-brand {
+    max-width: calc(100% - 70px);
+    white-space: normal;
+    color: var(--parchment);
+    font-family: Copperplate, serif;
+    font-size: 1rem;
+}
+
+.navbar-brand span {
+    max-width: 260px;
+}
+
+.navbar-brand .img-logo {
+    width: 64px;
+    flex-shrink: 0;
+}
+
+.menu-table {
+    --bs-table-bg: transparent;
+    --bs-table-color: inherit;
+}
+
+.menu-table caption {
+    color: var(--old-paper);
+    font-family: Copperplate, serif;
+    font-size: xx-large;
+}
+
+.form-group-radio label {
+    margin-left: 0.5em;
 }
 
 /*Font awesome is used on the menu page for the icons on either side of the menu caption flavor text */
