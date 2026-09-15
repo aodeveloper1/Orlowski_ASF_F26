@@ -32,43 +32,81 @@ if (menuBody) {
     }
 }
 
-async function loadMenu() {
-    try {
-        const response = await fetch('menu.json');
-        const items = await response.json();
-        const carousel = document.getElementById("carousel-inner")
+let allMenuItems = [];
 
-        items.forEach(item => {
-            const divEntry = document.createElement('div');
-            if (item['id'] === 1) {
-                divEntry.className = "carousel-item active";
-            } else {
-                divEntry.className = "carousel-item";
-            }
-            const img = document.createElement('img');
-            img.src = `./images/${item['img']}`;
-            img.class = 'd-block w-100';
-            img.alt = `${item['img']}`;
-            divEntry.appendChild(img);
+function renderCarousel(itemsToDisplay) {
 
-            const detailsDiv = document.createElement('div');
-            detailsDiv.innerHTML = `
+    const carousel = document.getElementById("carousel-inner")
+    carousel.innerHTML = "";
+
+    itemsToDisplay.forEach((item, index) => {
+        const divEntry = document.createElement('div');
+        if (index === 0) {
+            divEntry.className = "carousel-item active";
+        } else {
+            divEntry.className = "carousel-item";
+        }
+        const img = document.createElement('img');
+        img.src = `./images/${item['img']}`;
+        img.class = 'd-block w-100';
+        img.alt = `${item['img']}`;
+        divEntry.appendChild(img);
+
+        const detailsDiv = document.createElement('div');
+        detailsDiv.innerHTML = `
                 <span class="badge bg-secondary mb-2 text-uppercase small">${item['category']}</span>
                 <h5 class="fw-bold m-0">${item['name']}</h5>
                 <p class="small my-2">${item['description']}</p>
                 <p class="fw-bold  fs-5 m-0" style="color: #111A1C;">$${Number(item['price']).toFixed(2)}</p>
                 `;
-            detailsDiv.style.backgroundColor = '#F1E4C5';
-            detailsDiv.style.color = '#1D2C32';
-            detailsDiv.style.border = '2px solid #A45E32'
-            detailsDiv.style.padding = '0.5rem'
-            detailsDiv.style.fontFamily = "Georgia, serif"
-            divEntry.appendChild(detailsDiv);
+        detailsDiv.style.backgroundColor = '#F1E4C5';
+        detailsDiv.style.color = '#1D2C32';
+        detailsDiv.style.border = '2px solid #A45E32'
+        detailsDiv.style.padding = '0.5rem'
+        detailsDiv.style.fontFamily = "Georgia, serif"
+        divEntry.appendChild(detailsDiv);
 
-            carousel.appendChild(divEntry);
-        })
+        carousel.appendChild(divEntry);
+    });
+
+    // Reinitialize the Bootstrap carousel to reset its tracking internals
+    const carouselEl = document.getElementById('carousel');
+    if (window.bootstrap) {
+        new window.bootstrap.Carousel(carouselEl, {
+            ride: true
+        })}
+}
+
+function setupFilters() {
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const dropdownButton = document.getElementById('dropdownMenuButton');
+
+    filterButtons.forEach(button => {
+        button.addEventListener('click', (e) => {
+            const selectedCategory = e.target.getAttribute('data-category');
+
+            dropdownButton.textContent = e.target.textContent;
+
+            if (selectedCategory === 'all') {
+                renderCarousel(allMenuItems);
+            } else {
+                const filteredItems = allMenuItems.filter(item => item.category === selectedCategory);
+                renderCarousel(filteredItems);
+            }
+        });
+    });
+}
+
+async function loadMenu(){
+    try{
+        const response = await fetch('menu.json');
+        allMenuItems = await response.json();
+
+        renderCarousel(allMenuItems);
+        setupFilters();
+
     } catch (error) {
-        console.error('Error loading menu:', error);
+        console.error('Error loading menu: ', error);
     }
 }
 

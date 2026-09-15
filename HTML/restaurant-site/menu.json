@@ -1,0 +1,98 @@
+[
+  {
+    "id": 1,
+    "name": "Clockwork Coffee",
+    "description": "Black coffee from the steam-powered urn.",
+    "price": 0.03,
+    "category": "Breakfast",
+    "img": "clockwork_coffee.png"
+  },
+  {
+    "id": 2,
+    "name": "High-Pressure Hardtack",
+    "description": "Two regulation biscuits, softened on request.",
+    "price": 0.04,
+    "category": "Breakfast",
+    "img": "high_pressure_hardtack.png"
+  },
+  {
+    "id": 3,
+    "name": "Molasses Cornbread",
+    "description": "A square of cornmeal bread with molasses.",
+    "price": 0.06,
+    "category": "Breakfast",
+    "img": "molasses_cornbread.png"
+  },
+  {
+    "id": 4,
+    "name": "Cornmeal Mush",
+    "description": "Warm cornmeal porridge from the boiler galley.",
+    "price": 0.05,
+    "category": "Breakfast",
+    "img": "cornmeal_mush.png"
+  },
+  {
+    "id": 5,
+    "name": "Boiler-Room Bean Pot",
+    "description": "Slow-cooked beans with salt pork.",
+    "price": 0.1,
+    "category": "Lunch",
+    "img": "boiler_room_beans.png"
+  },
+  {
+    "id": 6,
+    "name": "Salt-Meat Sandwich",
+    "description": "Salted meat between softened hardtack slabs.",
+    "price": 0.12,
+    "category": "Lunch",
+    "img": "salt_meat_sandwhich.png"
+  },
+  {
+    "id": 7,
+    "name": "Telegraph Lentils",
+    "description": "Lentils, onion and carrots, dispatched piping hot.",
+    "price": 0.08,
+    "category": "Lunch",
+    "img": "telegraph_lentils.png"
+  },
+  {
+    "id": 8,
+    "name": "Forager's Soup",
+    "description": "Barley and the quartermaster's available vegetables.",
+    "price": 0.07,
+    "category": "Lunch",
+    "img": "forager_soup.png"
+  },
+  {
+    "id": 9,
+    "name": "Quartermaster's Stew",
+    "description": "Beef, potato and onion in a hearty broth.",
+    "price": 0.18,
+    "category": "Dinner",
+    "img": "quartermasters_stew.png"
+  },
+  {
+    "id": 10,
+    "name": "Pneumatic Pot Pie",
+    "description": "Vegetable-and-chicken gravy beneath a biscuit crust.",
+    "price": 0.2,
+    "category": "Dinner",
+    "img": "pneumatic_pot_pie.png"
+  },
+  {
+    "id": 11,
+    "name": "Ironclad Fish Cakes",
+    "description": "Salt fish and potato cakes with stewed cabbage.",
+    "price": 0.15,
+    "category": "Dinner",
+    "img": "ironclad_fish_cakes.png"
+  },
+  {
+    "id": 12,
+    "name": "The General's Roast",
+    "description": "Roast beef, potatoes and gravy, followed by apple duff.",
+    "price": 0.35,
+    "category": "Dinner",
+    "img": "generals_roast.png"
+  }
+]

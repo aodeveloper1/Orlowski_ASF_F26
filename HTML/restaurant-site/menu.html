@@ -15,7 +15,7 @@
     <div class="container">
         <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
             <img alt="Airship with 5M designator" class="img-logo" height="100"
-                 src="./images/MMMMM%20logo.png" width="100">
+                 src="./images/favicon.png" width="100">
             <span>Major McClellan's Migrating Mechanical Mess</span>
         </a>
         <button aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation"
@@ -152,14 +152,34 @@
                     <tbody id="menu-items"></tbody>
                 </table>
             </div>
-        </section>
-        <section class="menu-callout-images col-12">
-            <img alt="Clockwork coffee. High-pressure hardtack. The General's Roast."
-                 class="img-menu-callout" height="400"
-                 src="./images/MMMMM%20Menu%20Callout.png" width="600">
-            <footer>
-                <a class="btn" href="reservations.html">Schedule your chow delivery</a>
-            </footer>
+            <div class="position-relative mx-auto mt-4" style="max-width: 500px;">
+                <div class="dropdown position-absolute top-0 start-0 m-0" style="z-index: 1050;">
+                <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" id="dropdownMenuButton"
+                    style="font-family: 'Georgia', serif">
+                    Filter Menu
+                </button>
+                <ul class="dropdown-menu" style="font-family: 'Georgia', serif">
+                    <li><button class="dropdown-item filter-btn" type="button" data-category="all">All Items</button></li>
+                    <li><button class="dropdown-item filter-btn" type="button" data-category="Breakfast">Breakfast</button></li>
+                    <li><button class="dropdown-item filter-btn" type="button" data-category="Lunch">Lunch</button></li>
+                    <li><button class="dropdown-item filter-btn" type="button" data-category="Dinner">Dinner</button></li>
+                </ul>
+            </div>
+            <div id="carousel" class="carousel slide mt-4" style="max-width: 500px;"  data-bs-ride="true">
+                <div class="carousel-inner" id="carousel-inner">
+                </div>
+                <label for="prev"></label>
+                <button class="carousel-control-prev" id="prev" type="button" data-bs-target="#carousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <label for="next"></label>
+                <button class="carousel-control-next" id="next" type="button" data-bs-target="#carousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+            </div>
         </section>
     </div>
 </main>
