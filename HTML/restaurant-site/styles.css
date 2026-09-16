@@ -364,6 +364,11 @@ img {
     margin-left: 0.5em;
 }
 
+.menu-paragraph {
+    color: var(--union-navy);
+    background-color: var(--parchment);
+}
+
 body {
     background-image: url('./images/background.png');
     background-repeat: repeat;
