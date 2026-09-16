@@ -56,7 +56,7 @@ body {
 
 
 .navbar-nav {
-    font-family: Copperplate, serif;
+    font-family: Balthazar, serif;
 }
 
 
@@ -336,12 +336,12 @@ img {
     max-width: calc(100% - 70px);
     white-space: normal;
     color: var(--parchment);
-    font-family: Copperplate, serif;
+    font-family: Balthazar, serif;
     font-size: 1rem;
 }
 
 .navbar-brand span {
-    max-width: 260px;
+    max-width: 200px;
 }
 
 .navbar-brand .img-logo {
@@ -363,5 +363,22 @@ img {
 .form-group-radio label {
     margin-left: 0.5em;
 }
+
+body {
+    background-image: url('./images/background.png');
+    background-repeat: repeat;
+    background-position: top left;
+    background-size: 200px 200px;
+}
+
+
+/*Use Google Font Balthazar for all H1 headings*/
+h1 {
+    font-family: Balthazar, serif !important;
+}
+/*!*Use Google Font Balthazar for all navbar text*!*/
+/*.navbar-nav, .navbar-brand {*/
+/*    font-family: Balthazar, serif !important;*/
+/*}*/
 
 /*Font awesome is used on the menu page for the icons on either side of the menu caption flavor text */

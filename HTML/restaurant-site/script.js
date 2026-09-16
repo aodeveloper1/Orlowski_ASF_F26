@@ -32,86 +32,90 @@ if (menuBody) {
     }
 }
 
-let allMenuItems = [];
+const carousel = document.getElementById("carousel-inner")
 
-function renderCarousel(itemsToDisplay) {
+if(carousel) {
+    let allMenuItems = [];
 
-    const carousel = document.getElementById("carousel-inner")
-    carousel.innerHTML = "";
+    function renderCarousel(itemsToDisplay) {
 
-    itemsToDisplay.forEach((item, index) => {
-        const divEntry = document.createElement('div');
-        if (index === 0) {
-            divEntry.className = "carousel-item active";
-        } else {
-            divEntry.className = "carousel-item";
-        }
-        const img = document.createElement('img');
-        img.src = `./images/${item['img']}`;
-        img.class = 'd-block w-100';
-        img.alt = `${item['img']}`;
-        divEntry.appendChild(img);
 
-        const detailsDiv = document.createElement('div');
-        detailsDiv.innerHTML = `
+        carousel.innerHTML = "";
+
+        itemsToDisplay.forEach((item, index) => {
+            const divEntry = document.createElement('div');
+            if (index === 0) {
+                divEntry.className = "carousel-item active";
+            } else {
+                divEntry.className = "carousel-item";
+            }
+            const img = document.createElement('img');
+            img.src = `./images/${item['img']}`;
+            img.class = 'd-block w-100';
+            img.alt = `${item['img']}`;
+            divEntry.appendChild(img);
+
+            const detailsDiv = document.createElement('div');
+            detailsDiv.innerHTML = `
                 <span class="badge bg-secondary mb-2 text-uppercase small">${item['category']}</span>
                 <h5 class="fw-bold m-0">${item['name']}</h5>
                 <p class="small my-2">${item['description']}</p>
-                <p class="fw-bold  fs-5 m-0" style="color: #111A1C;">$${Number(item['price']).toFixed(2)}</p>
+                <p class="fw-bold  fs-5 m-0" style="color: #111A1C;">${money.format(item['price'])}</p>
                 `;
-        detailsDiv.style.backgroundColor = '#F1E4C5';
-        detailsDiv.style.color = '#1D2C32';
-        detailsDiv.style.border = '2px solid #A45E32'
-        detailsDiv.style.padding = '0.5rem'
-        detailsDiv.style.fontFamily = "Georgia, serif"
-        divEntry.appendChild(detailsDiv);
+            detailsDiv.style.backgroundColor = '#F1E4C5';
+            detailsDiv.style.color = '#1D2C32';
+            detailsDiv.style.border = '2px solid #A45E32'
+            detailsDiv.style.padding = '0.5rem'
+            detailsDiv.style.fontFamily = "Georgia, serif"
+            divEntry.appendChild(detailsDiv);
 
-        carousel.appendChild(divEntry);
-    });
-
-    // Reinitialize the Bootstrap carousel to reset its tracking internals
-    const carouselEl = document.getElementById('carousel');
-    if (window.bootstrap) {
-        new window.bootstrap.Carousel(carouselEl, {
-            ride: true
-        })}
-}
-
-function setupFilters() {
-    const filterButtons = document.querySelectorAll('.filter-btn');
-    const dropdownButton = document.getElementById('dropdownMenuButton');
-
-    filterButtons.forEach(button => {
-        button.addEventListener('click', (e) => {
-            const selectedCategory = e.target.getAttribute('data-category');
-
-            dropdownButton.textContent = e.target.textContent;
-
-            if (selectedCategory === 'all') {
-                renderCarousel(allMenuItems);
-            } else {
-                const filteredItems = allMenuItems.filter(item => item.category === selectedCategory);
-                renderCarousel(filteredItems);
-            }
+            carousel.appendChild(divEntry);
         });
-    });
-}
 
-async function loadMenu(){
-    try{
-        const response = await fetch('menu.json');
-        allMenuItems = await response.json();
-
-        renderCarousel(allMenuItems);
-        setupFilters();
-
-    } catch (error) {
-        console.error('Error loading menu: ', error);
+        // Reinitialize the Bootstrap carousel to reset its tracking internals
+        const carouselEl = document.getElementById('carousel');
+        if (window.bootstrap) {
+            new window.bootstrap.Carousel(carouselEl, {
+                ride: true
+            })
+        }
     }
+
+    function setupFilters() {
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const dropdownButton = document.getElementById('dropdownMenuButton');
+
+        filterButtons.forEach(button => {
+            button.addEventListener('click', (e) => {
+                const selectedCategory = e.target.getAttribute('data-category');
+
+                dropdownButton.textContent = e.target.textContent;
+
+                if (selectedCategory === 'all') {
+                    renderCarousel(allMenuItems);
+                } else {
+                    const filteredItems = allMenuItems.filter(item => item.category === selectedCategory);
+                    renderCarousel(filteredItems);
+                }
+            });
+        });
+    }
+
+    async function loadMenu() {
+        try {
+            const response = await fetch('menu.json');
+            allMenuItems = await response.json();
+
+            renderCarousel(allMenuItems);
+            setupFilters();
+
+        } catch (error) {
+            console.error('Error loading menu: ', error);
+        }
+    }
+
+    loadMenu();
 }
-
-loadMenu();
-
 
 const reservationForm = document.getElementById("reservation-form");
 if (reservationForm) {
@@ -169,7 +173,8 @@ if (reservationForm) {
             alert.appendChild(list);
         } else {
             const reservation = { name, email, unitSize, date, time, seating, dietaryNotes, newsletter };
-            console.log(reservation);
+            // console.log(reservation);
+            console.log(JSON.stringify(reservation));
             alert.className = "alert alert-success";
             alert.textContent = "Reservation details are valid. Your request has been logged to the console.";
         }
