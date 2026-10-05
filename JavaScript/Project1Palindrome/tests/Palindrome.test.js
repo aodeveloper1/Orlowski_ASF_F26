@@ -26,6 +26,10 @@ describe("Simple test cases", () => {
                expect(isPalindrome("Red rum, sir, is murder.")).toBe(true);
            })
 
+           test("palindromes should not be case-sensitive", () => {
+               expect(isPalindrome("Racecar")).toBe(true);
+           })
+
        })
 
         describe("should not be identified as a palindrome", () => {
@@ -36,10 +40,6 @@ describe("Simple test cases", () => {
 
             test('basic cases should not be palindrome', () => {
                 expect(isPalindrome("apple")).toBe(false);
-            })
-
-            test("palindromes should not be case-sensitive", () => {
-                expect(isPalindrome("Racecar")).toBe(true);
             })
 
             test("non-string input should not be palindrome", () => {
